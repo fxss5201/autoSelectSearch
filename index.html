@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>可搜索的下拉列表</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="autoSelectSearch.css">
+    <style>
+        body {
+            font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .input {
+            padding-left: 10px;
+            width: 200px;
+            height: 38px;
+            line-height: 1.3;
+            line-height: 38px\9;
+            border-width: 1px;
+            border-style: solid;
+            background-color: #fff;
+            border-radius: 2px;
+            border-color: #D2D2D2!important;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="js-autoSelectSearch-removeClass">鸣人</li>
+        <li class="js-autoSelectSearch-removeClass">佐助</li>
+    </ul>
+    <div class="autoSelectSearch-box js-autoSelectSearch-box" style="margin-left: 20px;">
+        <input class="input js-autoSelectSearch-input" type="text">
+        <ul class="autoSelectSearch-optionBox js-autoSelectSearch-optionBox" id="renderBox"></ul>
+    </div>
+    <div class="autoSelectSearch-box js-autoSelectSearch-box">
+        <input class="input js-autoSelectSearch-input" type="text" data-optionChoiced="18039678963">
+        <ul class="autoSelectSearch-optionBox js-autoSelectSearch-optionBox"></ul>
+    </div>
+    <button id="clickRender">点击将第一个制为鸣人</button>
+    <script src="jquery-1.11.3.js"></script>
+    <script src="autoSelectSearch.js"></script>
+    <script>
+        $(function () {
+            var data = [{
+                "FoowwUserName": "鸣人",
+                "spell": "mingren",
+                "simpleSpell": "MR",
+                "Cellphone": "11122223333"
+            }, {
+                "FoowwUserName": "佐助",
+                "spell": "zuozhu",
+                "simpleSpell": "ZZ",
+                "Cellphone": "12111112222"
+            }, {
+                "FoowwUserName": "春野樱",
+                "spell": "chunyeying",
+                "simpleSpell": "CYY",
+                "Cellphone": "12311112222"
+            }, {
+                "FoowwUserName": "卡卡西",
+                "spell": "kakaxi",
+                "simpleSpell": "kkx",
+                "Cellphone": "21211112222"
+            }, {
+                "FoowwUserName": "李洛克",
+                "spell": "liluoke",
+                "simpleSpell": "LLK",
+                "Cellphone": "32122223333"
+            }, {
+                "FoowwUserName": "自来也",
+                "spell": "zilaiye",
+                "simpleSpell": "ZLY",
+                "Cellphone": "23123234343"
+            }, {
+                "FoowwUserName": "我爱罗",
+                "spell": "woailuo",
+                "simpleSpell": "woailuo",
+                "Cellphone": "21312121212"
+            }, {
+                "FoowwUserName": "大蛇丸",
+                "spell": "dashewan",
+                "simpleSpell": "DSW",
+                "Cellphone": "32132324321"
+            }, {
+                "FoowwUserName": "纲手",
+                "spell": "gangshou",
+                "simpleSpell": "GS",
+                "Cellphone": "12000002121"
+            }, {
+                "FoowwUserName": "宇智波鼬",
+                "spell": "yuzhiboyou",
+                "simpleSpell": "YZBY",
+                "Cellphone": "10012123232"
+            }, {
+                "FoowwUserName": "柱间",
+                "spell": "zhujian",
+                "simpleSpell": "ZJ",
+                "Cellphone": "10011112222"
+            }, {
+                "FoowwUserName": "宇智波斑",
+                "spell": "yuzhiboban",
+                "simpleSpell": "YZBB",
+                "Cellphone": "10013232312"
+            }];
+
+            autoSelectSearch({
+                element: ".js-autoSelectSearch-input",
+                dataList: data,
+                key: "FoowwUserName",
+                isNeedSpell: true,
+                props: {
+                    label: "Cellphone",
+                    text: "FoowwUserName",
+                    spell: "spell",
+                    simpleSpell: "simpleSpell"
+                },
+                isOptionChoiced: true,
+                choicedType: "Cellphone",
+                isOpenRemove: false,
+                isEnter: true,
+                optionClickFun: function (obj) {
+                    console.log(obj)
+                    console.log(obj.targetInput.attr("class"))
+                }
+            });
+            $("#clickRender").on("click", function () {
+                autoSelectSearch.render($(".js-autoSelectSearch-input").eq(0), "11122223333");
+            });
+        });
+    </script>
+</body>
+
+</html>
