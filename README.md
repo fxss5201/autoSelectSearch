@@ -51,19 +51,21 @@ $("#clickRender").on("click", function () {
 
 ### 参数说明
 
-- element  {[object]}        [需要实现下拉列表的input标签，如果仅有一个可为".element"或者"#element"，如果为多个则为".element"]
-- dataList  {[array]}        [下拉列表的总数据]
-- key  {[string]}        [filter过滤依据]
-- isNeedSpell  {[boolen]}        [是否需要拼音检索，true需要，flase不需要，默认是false]
-- spellKey  {[string]}        [拼音全拼filter过滤依据，默认为"spell"]
-- simpleSpellKey  {[string]}        [拼音简拼filter过滤依据，默认为"simpleSpell"]
-- props  {[object]}        [渲染下拉列表的依据，默认为{ label: "attr",text: "name" }]
-- isSetSelectionRange  {[boolen]}        [是否需要在input选中的时候，直接选中value值，默认为选中（true），如不想选中，可设置为false]
-- isOptionChoiced  {[boolen]}        [是否需要设定旧的选项值，如果需要（true），则需要在input标签上面设置自定义属性data-optionChoiced]
-- choicedType  {[string]}        [选中值的参数类型]
-- optionChoicedClass  {[string]}        [selectSearchOption选中时的样式参数名称（isOptionChoiced必须为true），如果isOptionChoiced为false，则指定optionChoicedClass无效，默认为"js-option-choiced"]
-- isOpenRemove  {[boolen]}        [是否开启去重处理，默认false不开启,true开启则必须设置去重处理的class类名，去重处理主要是按照props里面的text来去重]
-- removeClass  {[string]}        [去重处理的class类名，默认值为"js-autoSelectSearch-removeClass"]
-- isEnter  {[boolen]}        [是否开启在input中的回车事件，点击回车默认选中（和筛选条件一致的）第一个]
-- isEnterCongruent  {[boolen]}        [开启在input中的回车事件，回车的时候内容是否要和列表中的内容匹配，true匹配，false匹不匹配都可以]
-- optionClickFun   {[function]}   [为selectSearchOption上绑定函数]
+| 参数 | 类型 | 描述 |
+| ------------- |:-------------:| :-----|
+|element|object|需要实现下拉列表的input标签，如果仅有一个可为".element"或者"#element"，如果为多个则为".element"|
+|dataList|array|下拉列表的总数据|
+|key|string|filter过滤依据|
+|isNeedSpell|boolen|是否需要拼音检索，true需要，flase不需要，默认是false|
+|spellKey|string|拼音全拼filter过滤依据，默认为"spell"|
+|simpleSpellKey|string|拼音简拼filter过滤依据，默认为"simpleSpell"|
+|props|object|渲染下拉列表的依据，默认为{ label: "attr",text: "name" }|
+|isSetSelectionRange|boolen|是否需要在input选中的时候，直接选中value值，默认为选中（true），如不想选中，可设置为false|
+|isOptionChoiced|boolen|是否需要设定旧的选项值，如果需要（true），则需要在input标签上面设置自定义属性data-optionChoiced|
+|choicedType|string|选中值的参数类型|
+|optionChoicedClass|string|selectSearchOption选中时的样式参数名称（isOptionChoiced必须为true），如果isOptionChoiced为false，则指定optionChoicedClass无效，默认为"js-option-choiced"|
+|isOpenRemove|boolen|是否开启去重处理，默认false不开启,true开启则必须设置去重处理的class类名，去重处理主要是按照props里面的text来去重|
+|removeClass|string|去重处理的class类名，默认值为"js-autoSelectSearch-removeClass"|
+|isEnter|boolen|是否开启在input中的回车事件，点击回车默认选中（和筛选条件一致的）第一个|
+|isEnterCongruent|boolen|开启在input中的回车事件，回车的时候内容是否要和列表中的内容匹配，true匹配，false匹不匹配都可以|
+|optionClickFun|function|为selectSearchOption上绑定函数|
