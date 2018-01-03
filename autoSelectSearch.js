@@ -362,8 +362,8 @@ function autoSelectSearch(options) {
         }
     }
 
-    // 下拉列表的点击事件
-    $.each($(".js-autoSelectSearch-optionBox"), function(i, n) {
+    // 下拉列表的点击事件$(".js-autoSelectSearch-optionBox")
+    $.each($(autoSelectSearchDefaults.element).next(".js-autoSelectSearch-optionBox"), function(i, n) {
         $(n).on("click", ".js-autoSelectSearch-option", function() {
             var _this = $(this);
             autoSelectSearchOptionClick(_this);
