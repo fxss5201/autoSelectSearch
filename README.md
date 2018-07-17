@@ -19,7 +19,7 @@ fxss-autoSelectSearch是一款jquery插件，支持中文/全拼/简拼等多种
 在html中需要有如下格式：
 
 ```html
-<div class="autoSelectSearch-box js-autoSelectSearch-box" style="margin-left: 20px;">
+<div class="autoSelectSearch-box js-autoSelectSearch-box">
     <input class="autoSelectSearch-input js-autoSelectSearch-input" type="text" id="test1" autocomplete="off">
     <ul class="autoSelectSearch-optionBox js-autoSelectSearch-optionBox" id="renderBox"></ul>
     <i class="autoSelectSearch-caret js-autoSelectSearch-caret"></i>
